@@ -1,3 +1,23 @@
+// Code to universalize interpreter
+if (typeof(process) == "object") {
+  var print = function(args) {
+	console.log(args);
+	}
+  var write = function(args) {
+	process.stdout.write(args);
+	}
+} else {
+  console = new Object();
+  console.log = function(args) {
+    print(args);
+	}
+  process = new Object();
+  process.stdout = new Object();
+  process.stdout.write = function(args) {
+    write(args);
+    }
+  }
+
 load('journal.js');
 function hasEvent(event, entry) {
   return entry.events.indexOf(event) != -1;
