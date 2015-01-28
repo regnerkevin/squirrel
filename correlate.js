@@ -18,7 +18,9 @@ if (typeof(process) == "object") {
     }
   }
 
+// File inclusion doesn't work with node :-(
 load('journal.js');
+
 function hasEvent(event, entry) {
   return entry.events.indexOf(event) != -1;
 }
