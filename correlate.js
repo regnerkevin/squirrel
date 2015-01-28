@@ -1,4 +1,8 @@
 // Code to universalize interpreter
+// Kevin Regner
+// 1/28
+// Chapter 4, squirrel.
+// Basic code to make Squirrel work
 if (typeof(process) == "object") {
   var print = function(args) {
 	console.log(args);
